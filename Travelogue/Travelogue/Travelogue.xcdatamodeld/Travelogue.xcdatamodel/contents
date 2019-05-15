@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entry" representedClassName="Entry" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" syncable="YES"/>
+    </entity>
+    <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
+        <relationship name="entries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entry" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Entry" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Trip" positionX="-54" positionY="0" width="128" height="60"/>
+    </elements>
+</model>
