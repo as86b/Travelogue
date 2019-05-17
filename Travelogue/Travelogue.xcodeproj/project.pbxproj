@@ -19,6 +19,12 @@
 		AA923498228BDF62005CA676 /* NewTravelogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA923497228BDF62005CA676 /* NewTravelogueViewController.swift */; };
 		AA9234A0228BE892005CA676 /* TraveloguesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92349F228BE892005CA676 /* TraveloguesViewController.swift */; };
 		AA9234A2228C8974005CA676 /* TravelogueEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9234A1228C8974005CA676 /* TravelogueEntryViewController.swift */; };
+		AAB69649228F22E400EBC1F6 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB69643228F22E400EBC1F6 /* Entry+CoreDataClass.swift */; };
+		AAB6964A228F22E400EBC1F6 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB69644228F22E400EBC1F6 /* Entry+CoreDataProperties.swift */; };
+		AAB6964B228F22E400EBC1F6 /* Travelogue+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB69645228F22E400EBC1F6 /* Travelogue+CoreDataClass.swift */; };
+		AAB6964C228F22E400EBC1F6 /* Travelogue+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB69646228F22E400EBC1F6 /* Travelogue+CoreDataProperties.swift */; };
+		AAB6964D228F22E400EBC1F6 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB69647228F22E400EBC1F6 /* Trip+CoreDataClass.swift */; };
+		AAB6964E228F22E400EBC1F6 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB69648228F22E400EBC1F6 /* Trip+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		AA923497228BDF62005CA676 /* NewTravelogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTravelogueViewController.swift; sourceTree = "<group>"; };
 		AA92349F228BE892005CA676 /* TraveloguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraveloguesViewController.swift; sourceTree = "<group>"; };
 		AA9234A1228C8974005CA676 /* TravelogueEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelogueEntryViewController.swift; sourceTree = "<group>"; };
+		AAB69643228F22E400EBC1F6 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AAB69644228F22E400EBC1F6 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AAB69645228F22E400EBC1F6 /* Travelogue+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Travelogue+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AAB69646228F22E400EBC1F6 /* Travelogue+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Travelogue+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AAB69647228F22E400EBC1F6 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AAB69648228F22E400EBC1F6 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +154,12 @@
 		AA8808E82284BB49004CD27D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AAB69643228F22E400EBC1F6 /* Entry+CoreDataClass.swift */,
+				AAB69644228F22E400EBC1F6 /* Entry+CoreDataProperties.swift */,
+				AAB69645228F22E400EBC1F6 /* Travelogue+CoreDataClass.swift */,
+				AAB69646228F22E400EBC1F6 /* Travelogue+CoreDataProperties.swift */,
+				AAB69647228F22E400EBC1F6 /* Trip+CoreDataClass.swift */,
+				AAB69648228F22E400EBC1F6 /* Trip+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,11 +306,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA8808BA228365A1004CD27D /* TripsViewController.swift in Sources */,
+				AAB6964C228F22E400EBC1F6 /* Travelogue+CoreDataProperties.swift in Sources */,
 				AA8808B8228365A1004CD27D /* AppDelegate.swift in Sources */,
+				AAB69649228F22E400EBC1F6 /* Entry+CoreDataClass.swift in Sources */,
+				AAB6964B228F22E400EBC1F6 /* Travelogue+CoreDataClass.swift in Sources */,
 				AA9234A2228C8974005CA676 /* TravelogueEntryViewController.swift in Sources */,
 				AA923496228BDF54005CA676 /* NewTripViewController.swift in Sources */,
 				AA923498228BDF62005CA676 /* NewTravelogueViewController.swift in Sources */,
+				AAB6964E228F22E400EBC1F6 /* Trip+CoreDataProperties.swift in Sources */,
+				AAB6964A228F22E400EBC1F6 /* Entry+CoreDataProperties.swift in Sources */,
 				AA9234A0228BE892005CA676 /* TraveloguesViewController.swift in Sources */,
+				AAB6964D228F22E400EBC1F6 /* Trip+CoreDataClass.swift in Sources */,
 				AA8808C0228365A1004CD27D /* Travelogue.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

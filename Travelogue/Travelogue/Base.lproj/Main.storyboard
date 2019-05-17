@@ -29,9 +29,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="d5E-yg-Zrp" kind="show" id="Fom-35-zpz"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -48,15 +45,18 @@
                     <navigationItem key="navigationItem" id="7Ih-KZ-cjA">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="uHc-LJ-KaG">
                             <connections>
+                                <action selector="newTrip:" destination="Sp1-tp-vv1" id="fbI-jQ-fBA"/>
                                 <segue destination="h5s-wx-egO" kind="show" id="N91-Wd-3QT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tripsTableView" destination="D90-sB-sJe" id="wiU-EF-6lF"/>
+                        <segue destination="d5E-yg-Zrp" kind="show" id="a7r-At-R44"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="Sp1-tp-vv1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1075" y="-544"/>
         </scene>
@@ -93,10 +93,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oov-dv-MCC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vOb-Lw-Cbw" firstAttribute="bottom" secondItem="Oov-dv-MCC" secondAttribute="bottom" id="BAG-sz-3pt"/>
+                            <constraint firstItem="Oov-dv-MCC" firstAttribute="leading" secondItem="vOb-Lw-Cbw" secondAttribute="leading" id="Dj5-o6-ouP"/>
+                            <constraint firstItem="vOb-Lw-Cbw" firstAttribute="trailing" secondItem="Oov-dv-MCC" secondAttribute="trailing" id="OmH-fG-G1f"/>
+                            <constraint firstItem="Oov-dv-MCC" firstAttribute="centerY" secondItem="vOb-Lw-Cbw" secondAttribute="centerY" id="Y8M-QB-5gy"/>
+                            <constraint firstItem="Oov-dv-MCC" firstAttribute="centerX" secondItem="vOb-Lw-Cbw" secondAttribute="centerX" id="bIQ-hI-MwY"/>
+                            <constraint firstItem="Oov-dv-MCC" firstAttribute="top" secondItem="vOb-Lw-Cbw" secondAttribute="top" id="pNg-Wu-x4h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vOb-Lw-Cbw"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="save" id="JRo-DA-H1v"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="newTravelogueTitle" destination="DNk-gR-swt" id="vNm-05-B6n"/>
                     </connections>
@@ -175,13 +193,53 @@
                     <view key="view" contentMode="scaleToFill" id="Lgz-s8-SMd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ugb-hy-g2q">
+                                <rect key="frame" x="0.0" y="148" width="414" height="665"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iGO-vU-S17">
+                                <rect key="frame" x="0.0" y="118" width="414" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-Cb-tPA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1J-dD-M9e">
+                                <rect key="frame" x="186" y="46" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iz6-vm-CrC" firstAttribute="trailing" secondItem="iGO-vU-S17" secondAttribute="trailing" id="CjY-TS-I80"/>
+                            <constraint firstItem="iz6-vm-CrC" firstAttribute="trailing" secondItem="7G8-Cb-tPA" secondAttribute="trailing" id="LxZ-E6-CUS"/>
+                            <constraint firstItem="ugb-hy-g2q" firstAttribute="leading" secondItem="iz6-vm-CrC" secondAttribute="leading" id="QW3-HB-MjR"/>
+                            <constraint firstItem="iGO-vU-S17" firstAttribute="leading" secondItem="iz6-vm-CrC" secondAttribute="leading" id="Tzg-L3-5Yr"/>
+                            <constraint firstItem="7G8-Cb-tPA" firstAttribute="top" secondItem="iz6-vm-CrC" secondAttribute="top" id="ah9-VS-24n"/>
+                            <constraint firstItem="7G8-Cb-tPA" firstAttribute="leading" secondItem="iz6-vm-CrC" secondAttribute="leading" id="svt-w6-X2L"/>
+                            <constraint firstItem="iz6-vm-CrC" firstAttribute="trailing" secondItem="ugb-hy-g2q" secondAttribute="trailing" id="wD5-5T-g3u"/>
+                            <constraint firstItem="ugb-hy-g2q" firstAttribute="top" secondItem="iGO-vU-S17" secondAttribute="bottom" id="wDP-mA-It6"/>
+                            <constraint firstItem="iGO-vU-S17" firstAttribute="top" secondItem="7G8-Cb-tPA" secondAttribute="bottom" id="ya5-pl-8Np"/>
+                            <constraint firstItem="iz6-vm-CrC" firstAttribute="bottom" secondItem="ugb-hy-g2q" secondAttribute="bottom" id="z1J-Qz-5xf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iz6-vm-CrC"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="save" id="AL9-eE-nzf"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xf8-F8-8te" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2877" y="-544"/>
+            <point key="canvasLocation" x="2876.811594202899" y="-544.41964285714278"/>
         </scene>
     </scenes>
 </document>

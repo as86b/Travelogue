@@ -18,7 +18,11 @@ class NewTravelogueViewController: UIViewController {
         
     }
     
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
     
 
 }
