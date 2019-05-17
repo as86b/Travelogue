@@ -17,7 +17,7 @@ extension Travelogue {
         return NSFetchRequest<Travelogue>(entityName: "Travelogue")
     }
 
-    @NSManaged public var traveloguetitle: String?
+    @NSManaged public var travelogueTitle: String?
     @NSManaged public var rawEntries: NSOrderedSet?
     @NSManaged public var trip: Trip?
 

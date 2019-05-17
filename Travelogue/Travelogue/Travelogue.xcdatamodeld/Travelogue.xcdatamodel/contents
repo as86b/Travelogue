@@ -8,7 +8,7 @@
         <relationship name="travelogue" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Travelogue" syncable="YES"/>
     </entity>
     <entity name="Travelogue" representedClassName="Travelogue" syncable="YES">
-        <attribute name="traveloguetitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="travelogueTitle" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="rawEntries" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Entry" syncable="YES"/>
         <relationship name="trip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" syncable="YES"/>
     </entity>

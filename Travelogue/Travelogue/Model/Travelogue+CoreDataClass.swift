@@ -12,20 +12,18 @@ import CoreData
 
 @objc(Travelogue)
 public class Travelogue: NSManagedObject {
-
-    var travelogueTitle: String?{
-        get{
-            return travelogueTitle as String?
-        }
-        set{
-            travelogueTitle = newValue as String?
-        }
-    }
     
     convenience init?(travelogueTitle: String) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         
-        let context = AppDelegate
+        guard let context = appDelegate?.persistentContainer.viewContext else {
+            return nil
+        }
+        
+        self.init(entity: Travelogue.entity(), insertInto: context)
+        
+        self.travelogueTitle = travelogueTitle
+        
     }
     
 }

@@ -10,22 +10,26 @@ import UIKit
 
 class NewTripViewController: UIViewController {
 
+    
+    @IBOutlet weak var newTripTitle: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
-    @IBAction func newTrip(_ sender: Any) {
+    @IBAction func saveTrip(_ sender: Any) {
         
-        //need to make another outlet for this
-        let trip = Trip(tripTitle: tripTitle.text ?? "") {
+        let trip = Trip(tripTitle: newTripTitle.text ?? "")
+        
+        do {
+            try trip?.managedObjectContext?.save()
             
+            self.navigationController?.popViewController(animated: true)
+        } catch {
+            print("Could not save new trip")
         }
-        
     }
     
-
    
 
 }

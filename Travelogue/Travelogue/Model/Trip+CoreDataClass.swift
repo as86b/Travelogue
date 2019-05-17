@@ -14,9 +14,9 @@ import CoreData
 public class Trip: NSManagedObject {
     
     //maybe have to convert from ns type?
-    var travelogues: [rawTravelogues]?{
-        return self.rawTravelogues?.array as? [ <#type#>]
-    }
+//    var travelogues: [rawTravelogues]?{
+//        return self.rawTravelogues?.array as? [ <#type#>]
+//    }
  
     convenience init?(tripTitle: String) {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
