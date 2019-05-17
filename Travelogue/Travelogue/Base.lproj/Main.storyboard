@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="2003" y="219"/>
         </scene>
-        <!--Trips View Controller-->
+        <!--Travelogues View Controller-->
         <scene sceneID="TpR-Ts-ckK">
             <objects>
-                <viewController id="d5E-yg-Zrp" customClass="TripsViewController" customModule="Travelogue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d5E-yg-Zrp" customClass="TraveloguesViewController" customModule="Travelogue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Mt-M2-qxU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +145,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Nzu-m0-slQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelogueCell" id="Nzu-m0-slQ">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nzu-m0-slQ" id="A7E-tw-bcW">
@@ -174,6 +174,7 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="traveloguesTableView" destination="vkI-IO-mCg" id="NRc-mg-ySS"/>
                         <segue destination="9zU-Am-igC" kind="show" id="V4V-Pf-gEI"/>
                     </connections>
                 </viewController>
@@ -181,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="2003" y="-544"/>
         </scene>
-        <!--View Controller-->
+        <!--Travelogue Entry View Controller-->
         <scene sceneID="DQn-14-bRg">
             <objects>
-                <viewController id="9zU-Am-igC" sceneMemberID="viewController">
+                <viewController id="9zU-Am-igC" customClass="TravelogueEntryViewController" customModule="Travelogue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lgz-s8-SMd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,9 +229,19 @@
                         <viewLayoutGuide key="safeArea" id="iz6-vm-CrC"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="save" id="AL9-eE-nzf"/>
+                        <barButtonItem systemItem="save" id="AL9-eE-nzf">
+                            <connections>
+                                <action selector="saveEntry:" destination="9zU-Am-igC" id="Jkb-JN-uSo"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="entryContent" destination="iGO-vU-S17" id="fcz-0P-LzS"/>
+                        <outlet property="entryDate" destination="7G8-Cb-tPA" id="e1a-Nc-Gsp"/>
+                        <outlet property="entryImage" destination="ugb-hy-g2q" id="sre-Wl-BVv"/>
+                        <outlet property="entryTitle" destination="M1J-dD-M9e" id="XvM-tc-bJR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xf8-F8-8te" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

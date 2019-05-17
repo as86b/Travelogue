@@ -10,21 +10,38 @@ import UIKit
 
 class TravelogueEntryViewController: UIViewController {
 
+    
+    @IBOutlet weak var entryTitle: UILabel!
+    
+    @IBOutlet weak var entryDate: UITextField!
+    
+    @IBOutlet weak var entryContent: UITextField!
+    
+    @IBOutlet weak var entryImage: UIImageView!
+    
+    var dateFormatter = DateFormatter()
+    
+    var entries = [Entry]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        dateFormatter.timeStyle = .long
+        dateFormatter.dateStyle = .long
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+//        fetch the entries
     }
-    */
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func saveEntry(_ sender: Any) {
+//        Needs to be disabled if no changes have been made to an entry
+    }
+    
 
 }
